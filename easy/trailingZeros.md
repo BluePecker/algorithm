@@ -7,15 +7,15 @@
 ```CPP
 class Solution
 {
-public:
+    public:
 
-    long long trailingZeros(long long n)
-    {
-        long long sum = 0;
-        while((n /= 5) != 0) {
-            sum += n;
+        long long trailingZeros(long long n)
+        {
+            long long sum = 0;
+            while((n /= 5) != 0) {
+                sum += n;
+            }
+            return sum;
         }
-        return sum;
-    }
-}
+};
 ```

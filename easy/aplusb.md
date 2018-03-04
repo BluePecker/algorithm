@@ -7,27 +7,27 @@
 ```CPP
 class Solution
 {
-public:
-    // 加法
-    int aplusb(int a, int b)
-    {
-        int ans = 0;
-        while (b) {
-            ans = a ^ b;
-            b = (a & b) << 1;
-            a = ans;
+    public:
+        // 加法
+        int aplusb(int a, int b)
+        {
+            int ans = 0;
+            while (b) {
+                ans = a ^ b;
+                b = (a & b) << 1;
+                a = ans;
+            }
+            return ans;
         }
-        return ans;
-    }
 
-    // int aplusb(int a, int b) {
-    //      return b ? aplusb(a ^ b, (a & b) << 1) : a;
-    // }
+        // int aplusb(int a, int b) {
+        //      return b ? aplusb(a ^ b, (a & b) << 1) : a;
+        // }
 
-    // 减法
-    int minus(int a, int b)
-    {
-        return aplusb(a, aplusb(~b, 1));
-    }
-}
+        // 减法
+        int minus(int a, int b)
+        {
+            return aplusb(a, aplusb(~b, 1));
+        }
+};
 ```
